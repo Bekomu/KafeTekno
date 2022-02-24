@@ -8,7 +8,7 @@ namespace KafeTekno.DATA
 {
     public class KafeVeri
     {
-        public int MasaAdet { get; set; } = 20;
+        public int MasaAdet { get; set; } = 20;    //default değer verdik
         public List<Urun> Urunler { get; set; } = new List<Urun>();
         public List<Siparis> AktifSiparisler { get; set; } = new List<Siparis>();
         public List<Siparis> GecmisSiparisler { get; set; } = new List<Siparis>();

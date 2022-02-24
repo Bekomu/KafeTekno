@@ -13,7 +13,7 @@ namespace KafeTekno.DATA
         public decimal BirimFiyat { get; set; }
         public int Adet { get; set; }
 
-        public string TutarTL { get { return $"₺{Tutar():c2}"; } }
+        public string TutarTL { get { return $"{Tutar():c2}"; } }
 
         public decimal Tutar()
         {

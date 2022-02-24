@@ -12,7 +12,7 @@ namespace KafeTekno.DATA
         public string UrunAd { get; set; }
         public override string ToString()
         {
-            return $"{UrunAd} (₺{BirimFiyat:c2})";
+            return $"{UrunAd} ({BirimFiyat:c2})";
         }
     }
 }

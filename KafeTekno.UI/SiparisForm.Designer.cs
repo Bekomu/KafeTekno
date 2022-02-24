@@ -33,13 +33,13 @@
             this.dgvSiparisDetaylar = new System.Windows.Forms.DataGridView();
             this.nudAdet = new System.Windows.Forms.NumericUpDown();
             this.cboUrun = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSiparisIptal = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblOdemeTutari = new System.Windows.Forms.Label();
             this.btnEkle = new System.Windows.Forms.Button();
             this.lblMasaNo = new System.Windows.Forms.Label();
             this.cboMasaNo = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnOdemelAl = new System.Windows.Forms.Button();
             this.btnTasi = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,25 +71,48 @@
             // 
             // dgvSiparisDetaylar
             // 
+            this.dgvSiparisDetaylar.AllowUserToAddRows = false;
             this.dgvSiparisDetaylar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSiparisDetaylar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSiparisDetaylar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparisDetaylar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisDetaylar.Location = new System.Drawing.Point(16, 80);
             this.dgvSiparisDetaylar.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvSiparisDetaylar.MultiSelect = false;
             this.dgvSiparisDetaylar.Name = "dgvSiparisDetaylar";
+            this.dgvSiparisDetaylar.ReadOnly = true;
+            this.dgvSiparisDetaylar.RowHeadersVisible = false;
+            this.dgvSiparisDetaylar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparisDetaylar.Size = new System.Drawing.Size(588, 494);
             this.dgvSiparisDetaylar.TabIndex = 13;
+            this.dgvSiparisDetaylar.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvSiparisDetaylar_UserDeletingRow);
             // 
             // nudAdet
             // 
             this.nudAdet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nudAdet.Location = new System.Drawing.Point(218, 33);
             this.nudAdet.Margin = new System.Windows.Forms.Padding(4);
+            this.nudAdet.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.nudAdet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudAdet.Name = "nudAdet";
             this.nudAdet.Size = new System.Drawing.Size(79, 29);
             this.nudAdet.TabIndex = 3;
             this.nudAdet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cboUrun
             // 
@@ -102,19 +125,20 @@
             this.cboUrun.Size = new System.Drawing.Size(191, 32);
             this.cboUrun.TabIndex = 1;
             // 
-            // button1
+            // btnSiparisIptal
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(627, 460);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 58);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "SİPARİŞ İPTAL";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSiparisIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSiparisIptal.BackColor = System.Drawing.Color.Red;
+            this.btnSiparisIptal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSiparisIptal.ForeColor = System.Drawing.Color.White;
+            this.btnSiparisIptal.Location = new System.Drawing.Point(627, 460);
+            this.btnSiparisIptal.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSiparisIptal.Name = "btnSiparisIptal";
+            this.btnSiparisIptal.Size = new System.Drawing.Size(100, 58);
+            this.btnSiparisIptal.TabIndex = 10;
+            this.btnSiparisIptal.Text = "SİPARİŞ İPTAL";
+            this.btnSiparisIptal.UseVisualStyleBackColor = false;
+            this.btnSiparisIptal.Click += new System.EventHandler(this.btnSiparisIptal_Click);
             // 
             // button2
             // 
@@ -129,6 +153,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "ANASAYFAYA DÖN";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblOdemeTutari
             // 
@@ -152,6 +177,7 @@
             this.btnEkle.TabIndex = 4;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblMasaNo
             // 
@@ -178,18 +204,19 @@
             this.cboMasaNo.Size = new System.Drawing.Size(99, 32);
             this.cboMasaNo.TabIndex = 6;
             // 
-            // button4
+            // btnOdemelAl
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.LawnGreen;
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.Location = new System.Drawing.Point(736, 460);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 58);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "ÖDEME AL";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnOdemelAl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOdemelAl.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnOdemelAl.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOdemelAl.Location = new System.Drawing.Point(736, 460);
+            this.btnOdemelAl.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOdemelAl.Name = "btnOdemelAl";
+            this.btnOdemelAl.Size = new System.Drawing.Size(100, 58);
+            this.btnOdemelAl.TabIndex = 11;
+            this.btnOdemelAl.Text = "ÖDEME AL";
+            this.btnOdemelAl.UseVisualStyleBackColor = false;
+            this.btnOdemelAl.Click += new System.EventHandler(this.btnOdemelAl_Click);
             // 
             // btnTasi
             // 
@@ -233,13 +260,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTasi);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnOdemelAl);
             this.Controls.Add(this.cboMasaNo);
             this.Controls.Add(this.lblMasaNo);
             this.Controls.Add(this.lblOdemeTutari);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSiparisIptal);
             this.Controls.Add(this.cboUrun);
             this.Controls.Add(this.nudAdet);
             this.Controls.Add(this.dgvSiparisDetaylar);
@@ -264,13 +291,13 @@
         private System.Windows.Forms.DataGridView dgvSiparisDetaylar;
         private System.Windows.Forms.NumericUpDown nudAdet;
         private System.Windows.Forms.ComboBox cboUrun;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSiparisIptal;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblOdemeTutari;
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Label lblMasaNo;
         private System.Windows.Forms.ComboBox cboMasaNo;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnOdemelAl;
         private System.Windows.Forms.Button btnTasi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
