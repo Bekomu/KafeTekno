@@ -25,10 +25,8 @@ namespace KafeTekno.UI
             //lvwMasalar.Items.Add(new ListViewItem(new[] { "06", "Ankara", "İç Anadolu" }, "bos"));
             //lvwMasalar.Items.Add(new ListViewItem(new[] { "35", "İzmir", "Ege" }, "dolu"));
             //lvwMasalar.LargeImageList = iList;
-
             OrnekUrunleriYukle();
             MasalariOlustur();
-
         }
 
         private void MasalariOlustur()
@@ -83,6 +81,11 @@ namespace KafeTekno.UI
                 db.AktifSiparisler.Add(siparis);
             }
             return siparis;
+        }
+
+        private void tsmiGecmisSiparisler_Click(object sender, EventArgs e)
+        {
+            new GecmisSiparislerForm(db).ShowDialog();
         }
     }
 }
