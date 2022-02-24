@@ -75,29 +75,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSiparisDetaylar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSiparisDetaylar.Location = new System.Drawing.Point(16, 74);
+            this.dgvSiparisDetaylar.Location = new System.Drawing.Point(16, 80);
             this.dgvSiparisDetaylar.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSiparisDetaylar.Name = "dgvSiparisDetaylar";
-            this.dgvSiparisDetaylar.Size = new System.Drawing.Size(558, 463);
+            this.dgvSiparisDetaylar.Size = new System.Drawing.Size(588, 494);
             this.dgvSiparisDetaylar.TabIndex = 13;
             // 
             // nudAdet
             // 
-            this.nudAdet.Location = new System.Drawing.Point(218, 32);
+            this.nudAdet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudAdet.Location = new System.Drawing.Point(218, 33);
             this.nudAdet.Margin = new System.Windows.Forms.Padding(4);
             this.nudAdet.Name = "nudAdet";
-            this.nudAdet.Size = new System.Drawing.Size(79, 23);
+            this.nudAdet.Size = new System.Drawing.Size(79, 29);
             this.nudAdet.TabIndex = 3;
             this.nudAdet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cboUrun
             // 
             this.cboUrun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUrun.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cboUrun.FormattingEnabled = true;
             this.cboUrun.Location = new System.Drawing.Point(19, 32);
             this.cboUrun.Margin = new System.Windows.Forms.Padding(4);
             this.cboUrun.Name = "cboUrun";
-            this.cboUrun.Size = new System.Drawing.Size(191, 24);
+            this.cboUrun.Size = new System.Drawing.Size(191, 32);
             this.cboUrun.TabIndex = 1;
             // 
             // button1
@@ -106,7 +108,7 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(597, 423);
+            this.button1.Location = new System.Drawing.Point(627, 460);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 58);
@@ -120,7 +122,7 @@
             this.button2.BackColor = System.Drawing.Color.Gold;
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Maroon;
-            this.button2.Location = new System.Drawing.Point(598, 489);
+            this.button2.Location = new System.Drawing.Point(628, 526);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(208, 48);
@@ -133,7 +135,7 @@
             this.lblOdemeTutari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOdemeTutari.AutoSize = true;
             this.lblOdemeTutari.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOdemeTutari.Location = new System.Drawing.Point(670, 373);
+            this.lblOdemeTutari.Location = new System.Drawing.Point(700, 410);
             this.lblOdemeTutari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOdemeTutari.Name = "lblOdemeTutari";
             this.lblOdemeTutari.Size = new System.Drawing.Size(64, 22);
@@ -142,10 +144,11 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(305, 29);
+            this.btnEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnEkle.Location = new System.Drawing.Point(305, 32);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(100, 24);
+            this.btnEkle.Size = new System.Drawing.Size(100, 32);
             this.btnEkle.TabIndex = 4;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -156,10 +159,10 @@
             this.lblMasaNo.BackColor = System.Drawing.Color.OrangeRed;
             this.lblMasaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblMasaNo.ForeColor = System.Drawing.Color.White;
-            this.lblMasaNo.Location = new System.Drawing.Point(590, 28);
+            this.lblMasaNo.Location = new System.Drawing.Point(620, 32);
             this.lblMasaNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMasaNo.Name = "lblMasaNo";
-            this.lblMasaNo.Size = new System.Drawing.Size(216, 223);
+            this.lblMasaNo.Size = new System.Drawing.Size(216, 219);
             this.lblMasaNo.TabIndex = 8;
             this.lblMasaNo.Text = "00";
             this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,12 +170,12 @@
             // cboMasaNo
             // 
             this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMasaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cboMasaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cboMasaNo.FormattingEnabled = true;
-            this.cboMasaNo.Location = new System.Drawing.Point(417, 30);
+            this.cboMasaNo.Location = new System.Drawing.Point(425, 32);
             this.cboMasaNo.Margin = new System.Windows.Forms.Padding(4);
             this.cboMasaNo.Name = "cboMasaNo";
-            this.cboMasaNo.Size = new System.Drawing.Size(99, 24);
+            this.cboMasaNo.Size = new System.Drawing.Size(99, 32);
             this.cboMasaNo.TabIndex = 6;
             // 
             // button4
@@ -180,7 +183,7 @@
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackColor = System.Drawing.Color.LawnGreen;
             this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.Location = new System.Drawing.Point(706, 423);
+            this.button4.Location = new System.Drawing.Point(736, 460);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 58);
@@ -190,11 +193,11 @@
             // 
             // btnTasi
             // 
-            this.btnTasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnTasi.Location = new System.Drawing.Point(525, 27);
+            this.btnTasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTasi.Location = new System.Drawing.Point(532, 32);
             this.btnTasi.Margin = new System.Windows.Forms.Padding(4);
             this.btnTasi.Name = "btnTasi";
-            this.btnTasi.Size = new System.Drawing.Size(49, 25);
+            this.btnTasi.Size = new System.Drawing.Size(72, 32);
             this.btnTasi.TabIndex = 7;
             this.btnTasi.Text = "TAŞI";
             this.btnTasi.UseVisualStyleBackColor = true;
@@ -203,7 +206,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(430, 9);
+            this.label5.Location = new System.Drawing.Point(442, 11);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
@@ -215,7 +218,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(634, 346);
+            this.label3.Location = new System.Drawing.Point(664, 383);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 22);
@@ -226,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 555);
+            this.ClientSize = new System.Drawing.Size(857, 592);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTasi);
@@ -244,7 +247,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(843, 594);
+            this.MinimumSize = new System.Drawing.Size(873, 631);
             this.Name = "SiparisForm";
             this.Text = "Masa 00";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylar)).EndInit();

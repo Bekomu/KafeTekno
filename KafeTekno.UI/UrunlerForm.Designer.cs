@@ -99,14 +99,14 @@
             this.dgvUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUrunler.Location = new System.Drawing.Point(12, 61);
             this.dgvUrunler.Name = "dgvUrunler";
-            this.dgvUrunler.Size = new System.Drawing.Size(520, 303);
+            this.dgvUrunler.Size = new System.Drawing.Size(520, 322);
             this.dgvUrunler.TabIndex = 12;
             // 
             // UrunlerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 380);
+            this.ClientSize = new System.Drawing.Size(544, 399);
             this.Controls.Add(this.dgvUrunler);
             this.Controls.Add(this.txtUrunAd);
             this.Controls.Add(this.btnEkle);
@@ -115,6 +115,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(560, 438);
             this.Name = "UrunlerForm";
             this.Text = "Ürünler";
             ((System.ComponentModel.ISupportInitialize)(this.nudBirimFiyat)).EndInit();
