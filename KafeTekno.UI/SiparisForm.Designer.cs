@@ -62,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(231, 11);
+            this.label2.Location = new System.Drawing.Point(258, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 17);
@@ -92,7 +92,7 @@
             // nudAdet
             // 
             this.nudAdet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nudAdet.Location = new System.Drawing.Point(218, 33);
+            this.nudAdet.Location = new System.Drawing.Point(248, 33);
             this.nudAdet.Margin = new System.Windows.Forms.Padding(4);
             this.nudAdet.Maximum = new decimal(new int[] {
             2000,
@@ -105,7 +105,7 @@
             0,
             0});
             this.nudAdet.Name = "nudAdet";
-            this.nudAdet.Size = new System.Drawing.Size(79, 29);
+            this.nudAdet.Size = new System.Drawing.Size(64, 29);
             this.nudAdet.TabIndex = 3;
             this.nudAdet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudAdet.Value = new decimal(new int[] {
@@ -117,12 +117,13 @@
             // cboUrun
             // 
             this.cboUrun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUrun.DropDownWidth = 350;
             this.cboUrun.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cboUrun.FormattingEnabled = true;
             this.cboUrun.Location = new System.Drawing.Point(19, 32);
             this.cboUrun.Margin = new System.Windows.Forms.Padding(4);
             this.cboUrun.Name = "cboUrun";
-            this.cboUrun.Size = new System.Drawing.Size(191, 32);
+            this.cboUrun.Size = new System.Drawing.Size(221, 32);
             this.cboUrun.TabIndex = 1;
             // 
             // btnSiparisIptal
@@ -170,10 +171,10 @@
             // btnEkle
             // 
             this.btnEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEkle.Location = new System.Drawing.Point(305, 32);
+            this.btnEkle.Location = new System.Drawing.Point(320, 32);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(100, 32);
+            this.btnEkle.Size = new System.Drawing.Size(85, 32);
             this.btnEkle.TabIndex = 4;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -198,10 +199,10 @@
             this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMasaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cboMasaNo.FormattingEnabled = true;
-            this.cboMasaNo.Location = new System.Drawing.Point(425, 32);
+            this.cboMasaNo.Location = new System.Drawing.Point(445, 32);
             this.cboMasaNo.Margin = new System.Windows.Forms.Padding(4);
             this.cboMasaNo.Name = "cboMasaNo";
-            this.cboMasaNo.Size = new System.Drawing.Size(99, 32);
+            this.cboMasaNo.Size = new System.Drawing.Size(79, 32);
             this.cboMasaNo.TabIndex = 6;
             // 
             // btnOdemelAl
@@ -233,7 +234,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(442, 11);
+            this.label5.Location = new System.Drawing.Point(455, 11);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
