@@ -13,6 +13,8 @@ namespace KafeTekno.UI
 {
     public partial class SiparisForm : Form
     {
+        public event EventHandler<MasaTasindiEventArgs> MasaTasindi;
+
         private readonly Siparis _siparis;
         private readonly KafeVeri _veri;
         private readonly BindingList<SiparisDetay> _blSiparisDetay;
@@ -26,7 +28,7 @@ namespace KafeTekno.UI
             cboUrun.DataSource = veri.Urunler;
             dgvSiparisDetaylar.DataSource = _blSiparisDetay;
             _blSiparisDetay.ListChanged += _blSiparisDetay_ListChanged;
-            MasaNoGuncelle();            
+            MasaNoGuncelle();
         }
 
         private void _blSiparisDetay_ListChanged(object sender, ListChangedEventArgs e)
@@ -44,6 +46,20 @@ namespace KafeTekno.UI
             Text = $"Masa {_siparis.MasaNo:00} (Açılış zamanı : {_siparis.AcilisZamani})";
             lblMasaNo.Text = _siparis.MasaNo.ToString("00");
 
+            for (int i = 1; i < _veri.MasaAdet; i++)
+            {
+                if (!_veri.AktifSiparisler.Any(x => x.MasaNo == i))
+                    cboMasaNo.Items.Add(i);
+            }
+
+            // *********************** VEYA *********************** 
+
+            //cboMasaNo.DataSource = Enumerable
+            //    .Range(1, _veri.MasaAdet)
+            //    .Where(x => !_veri.AktifSiparisler.Any(s=> s.MasaNo == x))
+            //    .ToList();
+
+            // *********************** VEYA *********************** 
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -52,10 +68,10 @@ namespace KafeTekno.UI
             Urun urun = (Urun)cboUrun.SelectedItem;
 
             SiparisDetay sd = new SiparisDetay()
-            { 
-                UrunAd = urun.UrunAd, 
-                BirimFiyat = urun.BirimFiyat, 
-                Adet = (int)nudAdet.Value 
+            {
+                UrunAd = urun.UrunAd,
+                BirimFiyat = urun.BirimFiyat,
+                Adet = (int)nudAdet.Value
             };
             _blSiparisDetay.Add(sd);
             EkleFormunuSifirla();
@@ -69,13 +85,13 @@ namespace KafeTekno.UI
 
         private void dgvSiparisDetaylar_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            
+
             DialogResult dr = MessageBox.Show(
-                text : "Silmek istediğinize emin misiniz ?",
-                caption : "Detay Silme Onayı", 
-                buttons : MessageBoxButtons.YesNo,
-                icon : MessageBoxIcon.Warning,
-                defaultButton : MessageBoxDefaultButton.Button2);        //9. i overload
+                text: "Silmek istediğinize emin misiniz ?",
+                caption: "Detay Silme Onayı",
+                buttons: MessageBoxButtons.YesNo,
+                icon: MessageBoxIcon.Warning,
+                defaultButton: MessageBoxDefaultButton.Button2);        //9. i overload
 
             e.Cancel = dr == DialogResult.No;
 
@@ -103,6 +119,19 @@ namespace KafeTekno.UI
             _veri.AktifSiparisler.Remove(_siparis);
             _veri.GecmisSiparisler.Add(_siparis);
             Close();
+        }
+
+        private void btnTasi_Click(object sender, EventArgs e)
+        {
+            if (cboMasaNo.SelectedItem == null) return;    // tüm masalar dolu iken taşıya basarsan
+            int eski = _siparis.MasaNo;
+            int yeni = (int)cboMasaNo.SelectedItem;
+            _siparis.MasaNo = yeni;
+            MasaNoGuncelle();
+            if (MasaTasindi != null)
+            {
+                MasaTasindi(this, new MasaTasindiEventArgs(eski, yeni));
+            }
         }
     }
 }

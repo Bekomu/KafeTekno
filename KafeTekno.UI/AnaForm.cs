@@ -1,10 +1,12 @@
 ﻿using KafeTekno.DATA;
 using KafeTekno.UI.Properties;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,17 +19,12 @@ namespace KafeTekno.UI
         KafeVeri db = new KafeVeri();
         public AnaForm()
         {
+            VerileriOku();
             InitializeComponent();
-            //ImageList iList = new ImageList();
-            //iList.Images.Add("bos", Resources.bos);
-            //iList.Images.Add("dolu", Resources.dolu);
-            //lvwMasalar.Items.Add(new ListViewItem(new[] { "01", "Adana", "Akdeniz" }, "dolu"));
-            //lvwMasalar.Items.Add(new ListViewItem(new[] { "06", "Ankara", "İç Anadolu" }, "bos"));
-            //lvwMasalar.Items.Add(new ListViewItem(new[] { "35", "İzmir", "Ege" }, "dolu"));
-            //lvwMasalar.LargeImageList = iList;
             OrnekUrunleriYukle();
             MasalariOlustur();
         }
+
 
         private void MasalariOlustur()
         {
@@ -63,13 +60,20 @@ namespace KafeTekno.UI
             lvi.ImageKey = "dolu";
             int masaNo = (int)lvi.Tag;
             Siparis siparis = SiparisBulYaDaOlustur(masaNo);
+            SiparisForm sf = new SiparisForm(siparis, db);
+            sf.MasaTasindi += Sf_MasaTasindi;
             new SiparisForm(siparis, db).ShowDialog();
             if (siparis.Durum != SiparisDurum.Aktif)
             {
                 lvi.ImageKey = "bos";
             }
-
         }
+
+        private void Sf_MasaTasindi(object sender, MasaTasindiEventArgs e)
+        {
+            MasaTasindi(e.EskiMasaNo, e.YeniMasaNo);
+        }
+
 
         private Siparis SiparisBulYaDaOlustur(int masaNo)
         {
@@ -92,5 +96,47 @@ namespace KafeTekno.UI
         {
             new UrunlerForm(db).ShowDialog();
         }
+        private void MasaTasindi(int eskiMasaNo, int yeniMasaNo)
+        {
+            foreach (ListViewItem lvi in lvwMasalar.Items)
+            {
+                int masaNo = (int)lvi.Tag;
+                if (masaNo == eskiMasaNo)
+                {
+                    lvi.ImageKey = "bos";
+                    lvi.Selected = false;
+                }
+                else if (masaNo == yeniMasaNo)
+                {
+                    lvi.ImageKey = "dolu";
+                    lvi.Selected = true;
+                }
+            }
+        }
+        private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            VerileriKaydet();
+        }
+
+        private void VerileriOku()
+        {
+            try
+            {
+                string json = File.ReadAllText("veri.json");
+                db = JsonConvert.DeserializeObject<KafeVeri>(json);
+            }
+            catch (Exception)
+            {
+                db = new KafeVeri();
+                OrnekUrunleriYukle();
+            }
+        }
+
+        private void VerileriKaydet()
+        {
+            string json = JsonConvert.SerializeObject(db);
+            File.WriteAllText("veri.json", json);
+        }
+
     }
 }

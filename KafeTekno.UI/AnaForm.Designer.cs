@@ -89,6 +89,7 @@
             this.MinimumSize = new System.Drawing.Size(572, 492);
             this.Name = "AnaForm";
             this.Text = "Kafe Tekno";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
